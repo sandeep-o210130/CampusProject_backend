@@ -15,7 +15,7 @@ const walletSchema = mongoose.Schema(
         },
         transactions:[
             {
-                type:{
+                transactionType:{
                     type:String,
                     enum:['CREDIT','DEBIT'],
                     required:true,
@@ -24,7 +24,7 @@ const walletSchema = mongoose.Schema(
                     type:Number,
                     required:true,
                 },
-                decription:{
+                description:{
                     type:String,
                     required:true,
                 },
@@ -41,6 +41,6 @@ const walletSchema = mongoose.Schema(
     }
 );
 
-const Wallet = mongoose.Model("Wallet",walletSchema);
+const Wallet = mongoose.model("Wallet",walletSchema);
 
 module.exports = Wallet;
