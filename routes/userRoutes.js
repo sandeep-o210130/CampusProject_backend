@@ -7,6 +7,6 @@ const {registerUser,authUser,getUserProfile} = require("../controllers/userCont.
 
 router.post('/register',registerUser);
 router.post('/login',authUser);
-router.post('/profile',protect,getUserProfile);
+router.get('/profile',protect,getUserProfile);
 
 module.exports = router;
