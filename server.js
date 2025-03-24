@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config()
 const userRoutes = require("./routes/userRoutes.js");
 const walletRoutes = require("./routes/walletRouter.js");
-
+const productRoutes = require("./routes/prodRoutes.js");
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
@@ -37,3 +37,5 @@ app.use(cors())
 app.use('/api/users',userRoutes);
 
 app.use('/api/wallet',walletRoutes);
+
+app.use('/api/products',productRoutes);
